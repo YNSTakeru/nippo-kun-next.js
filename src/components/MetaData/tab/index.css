@@ -1,0 +1,112 @@
+.tabs {
+  display: flex;
+  margin: 5px 40px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: lightgray;
+  border-left: 1px solid white;
+
+  &:first-child {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+}
+.add-tab {
+  display: block;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: background-color 0.3s ease-in-out;
+
+  border-top-right-radius: 26px;
+  border-bottom-right-radius: 26px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.tab-button.active {
+  background-color: gray;
+  color: white;
+}
+
+.task-controls {
+  margin: 10px 0;
+
+  & .edit {
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    position: relative;
+
+    &:after {
+      content: "編集";
+      position: absolute;
+      white-space: nowrap;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bolder;
+    }
+  }
+
+  & .edit:hover {
+    background-color: #388e3c;
+  }
+
+  & .remove {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #dc3545;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: white;
+    }
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+}
+
+.task-manager {
+  margin-top: 20px;
+}

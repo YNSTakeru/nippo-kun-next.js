@@ -1,0 +1,86 @@
+.multi__title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.multi__textarea__wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.multi__textarea {
+  width: calc(100% - 20px);
+  height: 200px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.multi__preview {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  /* Add this to position child elements relative to this element */
+}
+
+.multi__button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.multi__button.add {
+  margin-right: 10px;
+}
+
+.multi__button.remove {
+  display: block;
+  background-color: #dc3545;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #c82333;
+  }
+}
+
+.multi__button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.multi__textarea__item {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.multi__textarea__block {
+  white-space: pre-wrap;
+}

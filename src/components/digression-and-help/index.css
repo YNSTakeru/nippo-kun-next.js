@@ -1,0 +1,19 @@
+.tab__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.tab__title {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.tab__title.active {
+  text-decoration: underline;
+}
+
+.content__wrapper {
+  display: flex;
+  justify-content: center;
+}

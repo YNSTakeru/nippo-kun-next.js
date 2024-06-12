@@ -1,0 +1,21 @@
+.digression__wrapper {
+  padding: 0 40px;
+  position: relative;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.digression__title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.digression__textarea {
+  width: calc(100% - 20px);
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

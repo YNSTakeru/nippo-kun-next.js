@@ -1,0 +1,64 @@
+.confirm-button__wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 40px;
+  gap: 20px;
+}
+
+.copy-button {
+  display: block;
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 220px;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+
+  &:after {
+    content: "クリップボードにコピーする";
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+  }
+
+  &:hover {
+    background-color: #388e3c;
+  }
+}
+
+.back-button {
+  display: block;
+  background-color: #f44336;
+  color: white;
+  padding: 20px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 100px;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+
+  &:after {
+    content: "戻る";
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+  }
+
+  &:hover {
+    background-color: #d32f2f;
+  }
+}

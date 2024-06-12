@@ -1,0 +1,14 @@
+.single__wrapper {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  padding-top: 0px;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 0 40px;
+}

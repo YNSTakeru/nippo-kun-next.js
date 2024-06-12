@@ -1,0 +1,11 @@
+.total-review__wrapper {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  &.is-loading {
+    justify-content: center;
+    align-items: center;
+  }
+}

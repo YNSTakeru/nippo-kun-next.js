@@ -1,0 +1,35 @@
+.all-check-button__wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 40px;
+}
+
+.all-check-button {
+  display: block;
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 350px;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+
+  &:after {
+    content: "PDCA全体の観点からフィードバックを取得する";
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+  }
+
+  &:hover {
+    background-color: #388e3c;
+  }
+}
