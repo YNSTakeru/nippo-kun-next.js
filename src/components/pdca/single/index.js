@@ -24,61 +24,53 @@ export default function Single({ title, order = "PDCA" }) {
     setCommonFeedbackText("AIがフィードバックを生成中です...");
 
     try {
-      fetch("https://jsonplaceholder.typicode.com/todos/1")
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+      const response = await fetch(
+        "https://express-hello-world-a3nc.onrender.com/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            value: markdown,
+            order,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        response.json().then((data) => {
+          const { generatedText } = data;
+          setIsTruncated(false);
+          setIsLoading(false);
+
+          if (generatedText.length > 128) {
+            setCommonFeedbackText(marked.parse(generatedText.slice(0, 128)));
+            setAddFeedbackText(marked.parse(generatedText.slice(128)));
+
+            setIsTruncated(true);
+          } else {
+            setCommonFeedbackText(marked.parse(generatedText));
+          }
+        });
+      } else {
+        setIsTruncated(false);
+        setIsLoading(false);
+        setCommonFeedbackText(
+          marked.parse(
+            "エラーが発生しました\nしばらく時間を置いてから実行してください"
+          )
+        );
+      }
     } catch (e) {
-      console.log(e);
+      setIsTruncated(false);
+      setIsLoading(false);
+      setCommonFeedbackText(
+        marked.parse(
+          "エラーが発生しました\nしばらく時間を置いてから実行してください"
+        )
+      );
     }
-
-    // try {
-    //   const response = await fetch(
-    //     "https://express-hello-world-a3nc.onrender.com/",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         value: markdown,
-    //         order,
-    //       }),
-    //     }
-    //   );
-
-    //   if (response.ok) {
-    //     response.json().then((data) => {
-    //       const { generatedText } = data;
-    //       setIsTruncated(false);
-    //       setIsLoading(false);
-
-    //       if (generatedText.length > 128) {
-    //         setCommonFeedbackText(marked.parse(generatedText.slice(0, 128)));
-    //         setAddFeedbackText(marked.parse(generatedText.slice(128)));
-
-    //         setIsTruncated(true);
-    //       } else {
-    //         setCommonFeedbackText(marked.parse(generatedText));
-    //       }
-    //     });
-    //   } else {
-    //     setIsTruncated(false);
-    //     setIsLoading(false);
-    //     setCommonFeedbackText(
-    //       marked.parse(
-    //         "エラーが発生しました\nしばらく時間を置いてから実行してください"
-    //       )
-    //     );
-    //   }
-    // } catch (e) {
-    //   setIsTruncated(false);
-    //   setIsLoading(false);
-    //   setCommonFeedbackText(
-    //     marked.parse(
-    //       "エラーが発生しました\nしばらく時間を置いてから実行してください"
-    //     )
-    //   );
-    // }
   };
 
   const onFeedbackTextClick = (e) => {
